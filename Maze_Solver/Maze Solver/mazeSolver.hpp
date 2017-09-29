@@ -9,13 +9,30 @@
 #ifndef mazeSolver_hpp
 #define mazeSolver_hpp
 
+
+/* mazeSolver class ++
+ 
+ * This class takes in a maze (pointer to a 1D array) and returns either
+     a) The maze is valid
+     b) The maze is invalid
+ Where valid means that there is a path from start (given by user) and end (given by user)
+ 
+ * Each maze is made up of 0 and 1 where a 0 denotes an open space and a 1 denotes a wall
+ 
+ * The maze is validated using BFS (breadth first search) TODO: DFS...etc
+ 
+ ++ */
+
+
+// Import required libraries
+
 #include <stdio.h>
 #include <stdio.h>
 #include <iostream>
 #include <vector>
 #include <queue>
 
-/* BOARD
+/* BOARD (visual example)
  
  0  1  1  0  1
  0  1  0  0  1
@@ -32,6 +49,7 @@ private:
     
 public:
     
+    // Default Constructor
     mazeSolver(){
         maze = new int [25];
         for (int i = 0; i < 25; ++i){
@@ -39,42 +57,70 @@ public:
         }
     }
     
+    // 1st Constructor
     mazeSolver(int * a){
         maze = a;
     }
     
+    // BFS function to be called by user and defined below
     bool BFS_Check(int board_size, int width, int start, int end);
     
 };
 
-/* BFS ************ */
+/* Breadth First Search */
 bool mazeSolver::BFS_Check(int board_size, int width, int start, int end){
     
     /* Check if start element is 0 (valid starting position) */
-    
     if(maze[start] == 1){
+        
+        // Check failed, inform user and end program
         std::cout<<"Invalid start position"<<std::endl;
         return false;
     }
     
 
-    // create visited array
+    /*
+     Create visited array
+     
+     Reason: The visited array will hold out visted nodes. This will make sure we only visit a node once and remove the possability for an infinite loop
+
+     */
+    
     bool * visited = new bool[board_size];
+    
+    // Initialize each element in the visited array to false - No nodes visited
     for(int i = 0; i < board_size; i++)
         visited[i] = false;
     
-    // create queue
+    /*
+     Create Queue
+     
+     Reason: In order to perform a BFS, we need to use a Queue rather then a stack (DFS). A queue will allow us to check each node in the order that they were entered into the queue, in other terms, first in first out. I am calling the queue neighbors because this queue will hold the neighbors (that we havent already checked) of all the nodes we have already visisted.
+     
+     * A neighbor will be defined as any node that touches the current node from either above, below, right or left.
+     
+     Note: Because we are using a 1D array we must check for edge cases in which the right or left are in the next row and that neighboring node isnt below 0 or above N (length of array given by user) -- More of this is explained later
+     
+     */
     std::queue<int> neighbors;
     
-    // set node to equal the start node given by the user
+    // Set node to equal the start node given by the user
     int node = start;
 
-
+    // Set our start node to visited
+    // TODO: Check if start node = end node. If so, return valid
     visited[node] = true;
+    
+    /* Push the node (Start node) into the queue
+     Reason: This will allow us to pop the queue during the first iteration and test for all of the nodes neighbors, from that point on, the while loop (below) will add and pop the queue itself
+     */
+    
     neighbors.push(node);
     
+    // Nice output for visual
     std::cout<<"Checked nodes"<<std::endl;
 
+    
     while(!neighbors.empty())
     {
         
