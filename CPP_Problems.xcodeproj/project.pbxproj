@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		C061FF7D1F719946001FF991 /* CPP_Problems */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CPP_Problems; sourceTree = BUILT_PRODUCTS_DIR; };
 		C061FF801F719946001FF991 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C061FF8D1F71BA08001FF991 /* mazeSolver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mazeSolver.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				C061FF801F719946001FF991 /* main.cpp */,
+				C061FF8D1F71BA08001FF991 /* mazeSolver.hpp */,
 			);
 			path = CPP_Problems;
 			sourceTree = "<group>";
