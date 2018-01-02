@@ -32,6 +32,13 @@
 #include <vector>
 #include <queue>
 
+void DFS_Recursive_Check(int node, struct board maze, bool visited[], int mazeArray[]);
+struct board {
+    int board_size;
+    int board_width;
+    int end_Node;
+}
+board;
 /* BOARD (visual example)
  
  0  1  1  0  1
@@ -65,6 +72,10 @@ public:
     // BFS function to be called by user and defined below
     bool BFS_Check(int board_size, int width, int start, int end);
     
+    // DFS function to be called by user and defined below
+    void DFS_Check(int board_size, int width, int start, int end);
+    friend void DFS_Recursive_Check(int node, struct board maze, bool visited[], int mazeArray[]);
+
 };
 
 /* Breadth First Search */
@@ -157,4 +168,64 @@ bool mazeSolver::BFS_Check(int board_size, int width, int start, int end){
     return false;
     
 }
+
+/* Depth First Search */
+void mazeSolver::DFS_Check(int board_size, int width, int start, int end){
+    
+    bool * visited = new bool[board_size];
+    
+    // Initialize each element in the visited array to false - No nodes visited
+    for(int i = 0; i < board_size; i++)
+        visited[i] = false;
+    
+    struct board mazeStruct = board;
+    mazeStruct.board_size = board_size;
+    mazeStruct.board_width = width;
+    mazeStruct.end_Node = end;
+    
+    // Nice output for visual
+    std::cout<<"Checked nodes"<<std::endl;
+    
+    // Recursive function
+    DFS_Recursive_Check(start, mazeStruct, visited, maze);
+    std::cout<<"\n\nMaze is invalid\n"<<std::endl;
+
+}
+
+void DFS_Recursive_Check(int node, struct board maze, bool visited[], int mazeArray[]) {
+    
+    std::cout<<node<<' ';
+
+    /* BASE CASES */
+    /* Check if start element is 0 (valid starting position) */
+    if (mazeArray[node] == 1) {
+        std::cout<<"\n\nInvalid starting node\n"<<std::endl;
+    }
+    /* check if we have reached the end */
+    else if (node == maze.end_Node){
+        std::cout<<"\n\nMaze is valid\n"<<std::endl;
+        exit(1);
+    }
+
+    
+    // Check all neighbors
+    if ((node + 1) / maze.board_width == node/maze.board_width && node + 1 < maze.board_size && !visited[node + 1] && mazeArray[node + 1] == 0){
+        visited[node + 1] = true;
+        DFS_Recursive_Check(node + 1, maze, visited, mazeArray);
+    }
+    if (node + maze.board_width < maze.board_size && !visited[node + maze.board_width] && mazeArray[node + maze.board_width] == 0){
+        visited[node + maze.board_width] = true;
+        DFS_Recursive_Check(node + maze.board_width, maze, visited, mazeArray);
+    }
+    if ((node - 1) / maze.board_width == node/maze.board_width && node - 1 >= 0 && !visited[node - 1] && mazeArray[node - 1] == 0){
+        visited[node - 1] = true;
+        DFS_Recursive_Check(node - 1, maze, visited, mazeArray);
+    }
+    if (node - maze.board_width >= 0 && !visited[node - maze.board_width] && mazeArray[node - maze.board_width] == 0){
+        visited[node - maze.board_width] = true;
+        DFS_Recursive_Check(node - maze.board_width, maze, visited, mazeArray);
+    }
+
+}
+
 #endif /* mazeSolver_hpp */

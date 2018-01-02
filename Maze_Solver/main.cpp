@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include "mazeSolver.hpp"
-using namespace std;
 
 int main(int argc, const char * argv[]) {
     
@@ -23,11 +22,13 @@ int main(int argc, const char * argv[]) {
     };
     
     mazeSolver mazeChecker = mazeSolver(maze);
-    
+
+    mazeChecker.DFS_Check(25, 5, 5, 24);
+
     if(mazeChecker.BFS_Check(25, 5, 5, 24)){
-        cout<<"\n\nMaze is valid\n"<<endl;
+        std::cout<<"\n\nMaze is valid\n"<<std::endl;
     }else{
-        cout<<"\nMaze is invalid\n"<<endl;
+        std::cout<<"\nMaze is invalid\n"<<std::endl;
     }
     
     return 0;
