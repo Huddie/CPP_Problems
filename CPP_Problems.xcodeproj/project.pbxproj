@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C02639331F7DCE1F001A85CA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C02639321F7DCE1F001A85CA /* main.cpp */; };
-		C061FF811F719946001FF991 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C061FF801F719946001FF991 /* main.cpp */; };
+		C05715A41FFBE93900DF7CCF /* 3n+1 Problem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C057159D1FFBE93900DF7CCF /* 3n+1 Problem.cpp */; };
+		C05715A51FFBE93900DF7CCF /* The Trip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C057159E1FFBE93900DF7CCF /* The Trip.cpp */; };
+		C05715A61FFBE93900DF7CCF /* CryptKicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C057159F1FFBE93900DF7CCF /* CryptKicker.cpp */; };
+		C05715A71FFBE93900DF7CCF /* PokerHands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05715A01FFBE93900DF7CCF /* PokerHands.cpp */; };
+		C05715A81FFBE93900DF7CCF /* Shuffle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05715A11FFBE93900DF7CCF /* Shuffle.cpp */; };
+		C05715A91FFBE93900DF7CCF /* Jolly Jumper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05715A21FFBE93900DF7CCF /* Jolly Jumper.cpp */; };
+		C05715AA1FFBE93900DF7CCF /* Minesweeper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05715A31FFBE93900DF7CCF /* Minesweeper.cpp */; };
 		C06DC99F1F9443F2007559E3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C06DC99E1F9443F2007559E3 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +51,14 @@
 /* Begin PBXFileReference section */
 		C02639301F7DCE1F001A85CA /* Maze_Solver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Maze_Solver; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02639321F7DCE1F001A85CA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C057159D1FFBE93900DF7CCF /* 3n+1 Problem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "3n+1 Problem.cpp"; sourceTree = "<group>"; };
+		C057159E1FFBE93900DF7CCF /* The Trip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "The Trip.cpp"; sourceTree = "<group>"; };
+		C057159F1FFBE93900DF7CCF /* CryptKicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CryptKicker.cpp; sourceTree = "<group>"; };
+		C05715A01FFBE93900DF7CCF /* PokerHands.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PokerHands.cpp; sourceTree = "<group>"; };
+		C05715A11FFBE93900DF7CCF /* Shuffle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shuffle.cpp; sourceTree = "<group>"; };
+		C05715A21FFBE93900DF7CCF /* Jolly Jumper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Jolly Jumper.cpp"; sourceTree = "<group>"; };
+		C05715A31FFBE93900DF7CCF /* Minesweeper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Minesweeper.cpp; sourceTree = "<group>"; };
 		C061FF7D1F719946001FF991 /* CPP_Problems */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CPP_Problems; sourceTree = BUILT_PRODUCTS_DIR; };
-		C061FF801F719946001FF991 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C061FF8D1F71BA08001FF991 /* mazeSolver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mazeSolver.hpp; sourceTree = "<group>"; };
 		C06DC99C1F9443F2007559E3 /* Sort */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sort; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06DC99E1F9443F2007559E3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -95,6 +107,20 @@
 			path = Maze_Solver;
 			sourceTree = "<group>";
 		};
+		C057159C1FFBE92C00DF7CCF /* Skiena Programming Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				C057159D1FFBE93900DF7CCF /* 3n+1 Problem.cpp */,
+				C057159F1FFBE93900DF7CCF /* CryptKicker.cpp */,
+				C05715A21FFBE93900DF7CCF /* Jolly Jumper.cpp */,
+				C05715A31FFBE93900DF7CCF /* Minesweeper.cpp */,
+				C05715A01FFBE93900DF7CCF /* PokerHands.cpp */,
+				C05715A11FFBE93900DF7CCF /* Shuffle.cpp */,
+				C057159E1FFBE93900DF7CCF /* The Trip.cpp */,
+			);
+			path = "Skiena Programming Challenges";
+			sourceTree = "<group>";
+		};
 		C061FF741F719946001FF991 = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +144,7 @@
 		C061FF7F1F719946001FF991 /* CPP_Problems */ = {
 			isa = PBXGroup;
 			children = (
-				C061FF801F719946001FF991 /* main.cpp */,
+				C057159C1FFBE92C00DF7CCF /* Skiena Programming Challenges */,
 			);
 			path = CPP_Problems;
 			sourceTree = "<group>";
@@ -241,7 +267,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C061FF811F719946001FF991 /* main.cpp in Sources */,
+				C05715A51FFBE93900DF7CCF /* The Trip.cpp in Sources */,
+				C05715A41FFBE93900DF7CCF /* 3n+1 Problem.cpp in Sources */,
+				C05715A71FFBE93900DF7CCF /* PokerHands.cpp in Sources */,
+				C05715AA1FFBE93900DF7CCF /* Minesweeper.cpp in Sources */,
+				C05715A61FFBE93900DF7CCF /* CryptKicker.cpp in Sources */,
+				C05715A81FFBE93900DF7CCF /* Shuffle.cpp in Sources */,
+				C05715A91FFBE93900DF7CCF /* Jolly Jumper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
